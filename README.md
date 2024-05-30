@@ -74,3 +74,12 @@ The game is implemented during the course "Master Mobile Game Development with G
 - Project -> Project Settings -> Input Devices -> Pointing:
   - Emulate Touch From Mouse: true
   - Emulate Mouse From Touch: true
+
+### Create animation
+
+- Add AnimationPlayer to the node
+- Add new animation (name starts with lower case)
+- Add keyframes (!)
+  - texture
+  - position
+  - scale
