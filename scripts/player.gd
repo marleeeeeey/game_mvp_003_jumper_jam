@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 var speed = 300.0
@@ -19,7 +20,6 @@ func _physics_process(delta: float):
 	velocity.y += gravity
 	if velocity.y > max_fall_velocity:
 		velocity.y = max_fall_velocity
-	print(velocity.y)
 	
 	
 	# Control left-right movement.
