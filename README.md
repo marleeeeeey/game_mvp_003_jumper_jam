@@ -29,6 +29,7 @@ The game is implemented during the course "Master Mobile Game Development with G
 
 - Use `_physics_process` for physics related code.
 - Use `move_toward(velocity.x, 0, speed/10)` for smooth speed change.
+- Use `get_viewport_rect().size` to get the screen size. Once in `_ready` method.
 
 ## Files structure
 
