@@ -46,7 +46,8 @@ The game is implemented during the course "Master Mobile Game Development with G
 
 ## Devlog
 
-- TODO
+- Create project with Player jumping on platforms with camera following and camera limits : #2024-05-31
+- Complete half of gameplay development. 18% of the course completed : #2024-06-31
 
 ## TODO
 
