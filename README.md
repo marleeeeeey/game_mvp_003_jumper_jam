@@ -38,6 +38,7 @@ The game is implemented during the course "Master Mobile Game Development with G
 - Use type hints for variables and functions to get security from intellisense.
 - Use undercore for method's arguments: `func setup_camera(_player: Player):`.
 - Check different screen sizes when testing the mobile game.
+- Use `Camera.limit_bottom` to limit the camera movement.
 
 ## Files structure
 
