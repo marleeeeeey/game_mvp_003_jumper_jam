@@ -15,7 +15,7 @@ var viewport_size
 func _ready():
 	viewport_size = get_viewport_rect().size 
 
-func _process(delta: float):
+func _process(_delta: float):
 	
 	# Change animation when falling and jumping.
 	if velocity.y > 0:
@@ -25,7 +25,7 @@ func _process(delta: float):
 		if animator.current_animation != "jump":
 			animator.play("jump")
 
-func _physics_process(delta: float):
+func _physics_process(_delta: float):
 	
 	# Apply gravity.
 	velocity.y += gravity
