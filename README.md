@@ -32,6 +32,7 @@ The game is implemented during the course "Master Mobile Game Development with G
 - Use `get_viewport_rect().size` to get the screen size. Once in `_ready` method.
 - Name convention:
   - Scene: `PascalCase`
+  - SubScene: `PascalCase`
   - files: `snake_case`
   - animation: `snake_case`
   - layers: `snake_case`
@@ -110,3 +111,15 @@ func create_platform(location: Vector2):
 	platform_parent.add_child(platform)
 	return platform
 ```
+
+### Create parallax effect
+
+- Create next structure:
+  - ParallaxBackground
+    - ParallaxLayer x times (use Ctrl+D to duplicate)
+      - Sprite2D
+- The top one ParallaxLayer (on the back) moves faster than the bottom one.
+- Set `Sprite2D Offset Centered to OFF` to simplify the calculation in the code.
+- Set `Sprite2D Scale` to nice values to make the parallax effect visible in editor. Will be changed in the code.
+- Set `ParallaxLayer.Motion.Mirroring.y` to hight of the image `higth * image_scale.y`.
+- Set `ParallaxLayer.Scale` for each layer: `0.1, 0.2, 0.3, ...` from top to bottom.
