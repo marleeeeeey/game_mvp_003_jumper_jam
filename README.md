@@ -39,6 +39,7 @@ The game is implemented during the course "Master Mobile Game Development with G
 - Use undercore for method's arguments: `func setup_camera(_player: Player):`.
 - Check different screen sizes when testing the mobile game.
 - Use `Camera.limit_bottom` to limit the camera movement.
+- Use `get_tree().quit()` to quit the game.
 
 ## Files structure
 
@@ -95,3 +96,15 @@ The game is implemented during the course "Master Mobile Game Development with G
   - texture
   - position
   - scale
+
+### Good example of scene instancing
+
+```js
+@onready var platform_parent = $PlatformParent
+
+func create_platform(location: Vector2):
+	var platform = platform_scene.instantiate()
+	platform.global_position = location
+	platform_parent.add_child(platform)
+	return platform
+```

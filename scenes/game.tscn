@@ -10,26 +10,16 @@ script = ExtResource("1_610g2")
 [node name="Player" parent="." instance=ExtResource("2_42jnc")]
 position = Vector2(340, 852)
 
-[node name="Platform" parent="." instance=ExtResource("3_3cmbe")]
+[node name="PlatformParent" type="Node2D" parent="."]
+
+[node name="Platform" parent="PlatformParent" instance=ExtResource("3_3cmbe")]
 position = Vector2(-6, 886)
 
-[node name="Platform5" parent="." instance=ExtResource("3_3cmbe")]
-position = Vector2(98, 603)
-
-[node name="Platform6" parent="." instance=ExtResource("3_3cmbe")]
-position = Vector2(337, 418)
-
-[node name="Platform7" parent="." instance=ExtResource("3_3cmbe")]
-position = Vector2(70, 243)
-
-[node name="Platform8" parent="." instance=ExtResource("3_3cmbe")]
-position = Vector2(389, 169)
-
-[node name="Platform2" parent="." instance=ExtResource("3_3cmbe")]
+[node name="Platform2" parent="PlatformParent" instance=ExtResource("3_3cmbe")]
 position = Vector2(134, 887)
 
-[node name="Platform3" parent="." instance=ExtResource("3_3cmbe")]
+[node name="Platform3" parent="PlatformParent" instance=ExtResource("3_3cmbe")]
 position = Vector2(275, 887)
 
-[node name="Platform4" parent="." instance=ExtResource("3_3cmbe")]
+[node name="Platform4" parent="PlatformParent" instance=ExtResource("3_3cmbe")]
 position = Vector2(416, 887)
