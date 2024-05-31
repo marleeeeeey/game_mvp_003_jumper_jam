@@ -4,19 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://cbl3ywqufd802" path="res://assets/textures/platform/Platform.png" id="2_r8kex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8xpu"]
-size = Vector2(131, 9)
+size = Vector2(133.5, 9)
 
 [node name="Platform" type="Area2D"]
 collision_layer = 2
 script = ExtResource("1_meg54")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-5, 0)
+position = Vector2(-6, 0)
 texture = ExtResource("2_r8kex")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(68.5, 5.5)
+position = Vector2(67.25, 5)
 shape = SubResource("RectangleShape2D_c8xpu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
