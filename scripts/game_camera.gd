@@ -27,7 +27,7 @@ func _ready():
 	limit_right = viewport_size.x
 
 	# Create platform destroyer.
-	destroyer.position.y = viewport_size.y / 2.0  # Position relative to camera.
+	destroyer.position.y = viewport_size.y  # Position relative to camera.
 	var rect_shape = RectangleShape2D.new()
 	var rect_shape_size = Vector2(viewport_size.x, 200)
 	rect_shape.set_size(rect_shape_size)
@@ -39,3 +39,10 @@ func _process(delta):
 		var limit_distance = 420
 		if limit_bottom > player.global_position.y + limit_distance:
 			limit_bottom = player.global_position.y + limit_distance
+
+	# Destroying overlapping platform areas.
+	var overlapping_areas = destroyer.get_overlapping_areas()  # Platform is area.
+	if overlapping_areas.size() > 0:
+		for area in overlapping_areas:
+			if area is Platform:
+				area.queue_free()
