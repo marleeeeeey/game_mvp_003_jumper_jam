@@ -43,6 +43,8 @@ The game is implemented during the course "Master Mobile Game Development with G
 - Check different screen sizes when testing the mobile game.
 - Use `Camera.limit_bottom` to limit the camera movement.
 - Use `get_tree().quit()` to quit the game.
+- Prototype elements in the UI and then replace them with code behind setup.
+- Use `any_node.find_child("Sprite2D")` to access the child of the node.
 
 ## Files structure
 
@@ -121,5 +123,5 @@ func create_platform(location: Vector2):
 - The top one ParallaxLayer (on the back) moves faster than the bottom one.
 - Set `Sprite2D Offset Centered to OFF` to simplify the calculation in the code.
 - Set `Sprite2D Scale` to nice values to make the parallax effect visible in editor. Will be changed in the code.
-- Set `ParallaxLayer.Motion.Mirroring.y` to hight of the image `higth * image_scale.y`.
+- Set `ParallaxLayer.Motion.Mirroring.y` to `height * image_scale.y`.
 - Set `ParallaxLayer.Scale` for each layer: `0.1, 0.2, 0.3, ...` from top to bottom.
