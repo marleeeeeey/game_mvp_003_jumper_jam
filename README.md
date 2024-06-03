@@ -45,6 +45,7 @@ The game is implemented during the course "Master Mobile Game Development with G
 - Use `get_tree().quit()` to quit the game.
 - Prototype elements in the UI and then replace them with code behind setup.
 - Use `any_node.find_child("Sprite2D")` to access the child of the node.
+- Use `OS.get_name()` to check the platform.
 
 ## Files structure
 
@@ -146,3 +147,8 @@ func create_platform(location: Vector2):
   - Accept the connection on the device.
   - Check the device in the Godot editor (Top right corner icon - Remote Debug).
   - You should see the device in the list.
+- CMD commnds:
+  - `adb devices` - list of connected devices.
+  - `adb -s <device_name> logcat` - show logs from the device.
+  - `adb install -r path_to_apk` - install the APK to the device.
+  - `adb uninstall com.example.mygame` - uninstall the APK from the device.
