@@ -125,3 +125,24 @@ func create_platform(location: Vector2):
 - Set `Sprite2D Scale` to nice values to make the parallax effect visible in editor. Will be changed in the code.
 - Set `ParallaxLayer.Motion.Mirroring.y` to `height * image_scale.y`.
 - Set `ParallaxLayer.Scale` for each layer: `0.1, 0.2, 0.3, ...` from top to bottom.
+
+### Export to Android
+
+- https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html
+  - Install JDK
+  - Install Android Studio
+  - Customize Android studio with SDK, NDK, and etc.
+- Editor -> Editor Settings -> Export -> Android:
+  - Java SDK Path: `C:\Program Files\Eclipse Adoptium\jdk-17.0.11.9-hotspot\`
+  - Android SDK Path: `C:/Users/<USER>/AppData/Local/Android/Sdk`
+  - Debug Keystore: `C:/Users/<USER>/.android/debug.keystore`
+- Project -> Export -> Android:
+  - Unique Name: `com.example.mygame`
+  - Name: `My Game`
+  - Export path: `C:/your/export/path`
+  - Try export to APK.
+- Enable Developer mode on the device.
+  - Connect Android device to the computer.
+  - Accept the connection on the device.
+  - Check the device in the Godot editor (Top right corner icon - Remote Debug).
+  - You should see the device in the list.
