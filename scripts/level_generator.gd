@@ -16,18 +16,23 @@ func setup(_player: Player):
 	if _player:
 		player = _player
 
+
 func _ready():
 	# Generate the first iteration of level with ground.
 	start_platform_y = viewport_size.y - (y_distance_between_platforms * 2)
 	generate_level(start_platform_y, true)
 
-func _process(_delta):	
+
+func _process(_delta):
 	if player:
 		var py = player.global_position.y
-		var end_of_level_pos = start_platform_y - ( generated_platform_count * y_distance_between_platforms)
+		var end_of_level_pos = (
+			start_platform_y - (generated_platform_count * y_distance_between_platforms)
+		)
 		var threshhold = end_of_level_pos + (y_distance_between_platforms * 6)
 		if py <= threshhold:
 			generate_level(end_of_level_pos, false)
+
 
 func generate_level(start_y: float, generate_ground: bool):
 	var platform_width = 136  # Platform collision shape wight.
