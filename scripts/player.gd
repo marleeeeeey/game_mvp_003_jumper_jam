@@ -40,7 +40,6 @@ func _physics_process(_delta: float):
 
 	if use_accelerometer == true:
 		var mobile_input = Input.get_accelerometer()
-		print("Accelerometer: " + str(mobile_input))
 		velocity.x = mobile_input.x * accelerometer_speed
 	else:
 		# Control left-right movement.
