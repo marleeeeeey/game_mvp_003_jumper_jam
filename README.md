@@ -44,8 +44,9 @@ The game is implemented during the course "Master Mobile Game Development with G
 - Use `Camera.limit_bottom` to limit the camera movement.
 - Use `get_tree().quit()` to quit the game.
 - Prototype elements in the UI and then replace them with code behind setup.
-- Use `any_node.find_child("Sprite2D")` to access the child of the node.
+- Use `any_node.find_child("Sprite2D")` to access the child of the node. Not only the direct child.
 - Use `OS.get_name()` to check the platform.
+- Use `get_tree().get_first_node_in_group("any_name")` to get the node by group name.
 
 ## Files structure
 
@@ -152,3 +153,24 @@ func create_platform(location: Vector2):
   - `adb -s <device_name> logcat` - show logs from the device.
   - `adb install -r path_to_apk` - install the APK to the device.
   - `adb uninstall com.example.mygame` - uninstall the APK from the device.
+
+### Create singleton code behind class to access from any scene
+
+- Create new script file with the name `utility.gd`
+- Project -> Project Settings -> AutoLoad:
+  - Path: `res://srcipts/utility.gd`
+  - Node Name: `MyUtility` (to prevent name conflicts)
+  - Add
+  - Set `Enable` to `On`
+- Usage:
+  - `MyUtility.my_function()`
+- Access to custom consolse log from script:
+  - Attach group "debug_console" to the console node.
+  - In the script check if the console is available and use it.
+
+```js
+func add_log_msg(log_str: String):
+	var console = get_tree().get_first_node_in_group("debug_console")
+	if cosole:
+		pass
+```
