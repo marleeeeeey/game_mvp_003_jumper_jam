@@ -37,6 +37,7 @@ Gameplay is similar to the Doodle Jump game. The player jumps on the platforms a
   - files: `snake_case`
   - animation: `snake_case`
   - layers: `snake_case`
+  - groups: `snake_case`
 - Use type hints for variables and functions to get security from intellisense.
 - Use undercore for method's arguments `func setup_camera(_player: Player):` to
   - fix name conflicts.
@@ -51,6 +52,7 @@ Gameplay is similar to the Doodle Jump game. The player jumps on the platforms a
 - Use `TextureRect` instead of `Sprite2D` for the UI elements. Allows for containers and scaling stuff.
 - Use empty elements (Controls) as anchors for animations to support different screen sizes.
 - Set `Control.Mouse.Filter` to `IGNORE` to prevent mouse events from the UI for debug layout as example.
+- Use `Tween` class for animations to interpolate values easily and lightweight. Tween is like code behind animation player.
 
 ## Files structure
 
@@ -195,3 +197,24 @@ func add_log_msg(log_str: String):
 - Drug and drop the script to the scenes where you want to use it.
 - In the script use `extends Controls` to get access to the UI elements as example.
 - Write the common code in the script.
+
+### Create fade in/out animation for the screens
+
+https://docs.godotengine.org/en/stable/classes/class_tween.html
+
+```js
+
+func disapear():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "modulate:a", 0.0, 0.5) # set modulate.alpha property
+	return tween
+
+func change_screen(new_screen):
+	if current_screen:
+		var disappear_tween = current_screen.disapear()
+		await(disappear_tween.finished)
+		current_screen.visible = false
+	current_screen = new_screen
+	if current_screen:
+		var appear_tween = current_screen.appear()
+```
