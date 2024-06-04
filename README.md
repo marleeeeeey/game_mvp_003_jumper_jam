@@ -47,6 +47,8 @@ The game is implemented during the course "Master Mobile Game Development with G
 - Use `any_node.find_child("Sprite2D")` to access the child of the node. Not only the direct child.
 - Use `OS.get_name()` to check the platform.
 - Use `get_tree().get_first_node_in_group("any_name")` to get the node by group name.
+- Use `TextureRect` instead of `Sprite2D` for the UI elements. Allows for containers and scaling stuff.
+- Use empty elements (Controls) as anchors for animations to support different screen sizes.
 
 ## Files structure
 
