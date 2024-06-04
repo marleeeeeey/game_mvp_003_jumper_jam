@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cwfom7k3dro3m"]
 
 [ext_resource type="Texture2D" uid="uid://b464g01typjd8" path="res://assets/textures/ui/BigLogo.png" id="1_qvjyg"]
-[ext_resource type="PackedScene" uid="uid://s6rs3em1gb41" path="res://scenes/sceen_button.tscn" id="2_db53j"]
+[ext_resource type="PackedScene" uid="uid://s6rs3em1gb41" path="res://scenes/screen_button.tscn" id="2_db53j"]
 [ext_resource type="Texture2D" uid="uid://bweiuk6g1yeel" path="res://assets/textures/ui/PlayBtn.png" id="3_2gq5q"]
 
 [sub_resource type="Animation" id="Animation_dp76b"]
@@ -10,7 +10,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Play:position")
+tracks/0/path = NodePath("Control/TitlePlay:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +25,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Play:position")
+tracks/0/path = NodePath("Control/TitlePlay:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -79,7 +79,7 @@ grow_vertical = 2
 texture = ExtResource("1_qvjyg")
 expand_mode = 1
 
-[node name="Play" parent="Control" instance=ExtResource("2_db53j")]
+[node name="TitlePlay" parent="Control" instance=ExtResource("2_db53j")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

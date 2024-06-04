@@ -49,6 +49,7 @@ The game is implemented during the course "Master Mobile Game Development with G
 - Use `get_tree().get_first_node_in_group("any_name")` to get the node by group name.
 - Use `TextureRect` instead of `Sprite2D` for the UI elements. Allows for containers and scaling stuff.
 - Use empty elements (Controls) as anchors for animations to support different screen sizes.
+- Set `Control.Mouse.Filter` to `IGNORE` to prevent mouse events from the UI for debug layout as example.
 
 ## Files structure
 
@@ -176,3 +177,13 @@ func add_log_msg(log_str: String):
 	if cosole:
 		pass
 ```
+
+### Create a central callback for every button in the game
+
+- Create a new scene ScreenButton as TextureButton
+- Create a new script for the ScreenButton with custom signal: `signal clicked(button)`
+- Emit the signal with self in the `_on_pressed()` method: `clicked.emit(self)`
+- Add the ScreenButton to the group "buttons"
+- In the main script iterate over all buttons: `get_tree().get_nodes_in_group("buttons")`
+- Connect the signal to the main script method: `button.connect.clicked(_on_button_pressed)`
+- Use `match` to check the button name: `match button.name: "start": _start_game()`
