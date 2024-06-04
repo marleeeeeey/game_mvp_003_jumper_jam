@@ -3,7 +3,7 @@
 The game is implemented during the course "Master Mobile Game Development with Godot 4".
 - Course: https://www.udemy.com/course/mobile-game-godot/
 - Created by: GameDev.tv Team, Kaan Alpar.
-- Repo: https://gitlab.com/GameDevTV/godot-mobile/jumper-jam
+- Original Repo: https://gitlab.com/GameDevTV/godot-mobile/jumper-jam
 - Site: https://www.gamedev.tv
 - Discord: https://discord.gg/eUSFZdJ
 
