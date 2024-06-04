@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cf8cq1f8d0f3b"]
+[gd_scene load_steps=8 format=3 uid="uid://cf8cq1f8d0f3b"]
 
+[ext_resource type="Script" path="res://scripts/base_screen.gd" id="1_bgyts"]
 [ext_resource type="Texture2D" uid="uid://clkhcoh45840v" path="res://assets/textures/ui/Box02.png" id="1_kawk8"]
 [ext_resource type="Texture2D" uid="uid://chhd47rmev6bw" path="res://assets/textures/ui/PausedText.png" id="2_rm2re"]
-[ext_resource type="PackedScene" uid="uid://s6rs3em1gb41" path="res://scenes/screen_button.tscn" id="3_mfcke"]
+[ext_resource type="PackedScene" uid="uid://s6rs3em1gb41" path="res://scenes/screen_button.tscn" id="4_kq74c"]
 [ext_resource type="Texture2D" uid="uid://dsviyrmnlxptm" path="res://assets/textures/ui/RestartBtn.png" id="4_qbgfq"]
 [ext_resource type="Texture2D" uid="uid://wcbaftwyqo0" path="res://assets/textures/ui/menuBtn.png" id="5_rgu6c"]
 [ext_resource type="Texture2D" uid="uid://hwmv3hjx47cm" path="res://assets/textures/ui/Closebtn2.png" id="6_hbfts"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bgyts")
 
 [node name="BlackBG" type="ColorRect" parent="."]
 layout_mode = 1
@@ -48,7 +50,7 @@ offset_right = 446.5
 offset_bottom = 147.0
 texture = ExtResource("2_rm2re")
 
-[node name="PauseRetry" parent="Box" instance=ExtResource("3_mfcke")]
+[node name="PauseRetry" parent="Box" instance=ExtResource("4_kq74c")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -65,7 +67,7 @@ texture_normal = ExtResource("4_qbgfq")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="PauseBack" parent="Box" instance=ExtResource("3_mfcke")]
+[node name="PauseBack" parent="Box" instance=ExtResource("4_kq74c")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -82,7 +84,7 @@ texture_normal = ExtResource("5_rgu6c")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="PauseClose" parent="Box" instance=ExtResource("3_mfcke")]
+[node name="PauseClose" parent="Box" instance=ExtResource("4_kq74c")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

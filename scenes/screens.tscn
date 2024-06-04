@@ -10,10 +10,8 @@
 script = ExtResource("1_7uwko")
 
 [node name="TitleScreen" parent="." instance=ExtResource("3_wfrmb")]
-visible = false
 
 [node name="PauseScreen" parent="." instance=ExtResource("4_rbw1o")]
-visible = false
 
 [node name="GameOverScreen" parent="." instance=ExtResource("4_mvtbe")]
 

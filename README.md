@@ -1,6 +1,7 @@
-# Game MVP 003 - Mobile Game Like Doogle Jump
+# Game MVP 003 - Jumper Jam
 
-The game is implemented during the course "Master Mobile Game Development with Godot 4".
+Jumper Jam - the game is implemented during the course "Master Mobile Game Development with Godot 4".
+Gameplay is similar to the Doodle Jump game. The player jumps on the platforms and tries to reach the highest score.
 - Course: https://www.udemy.com/course/mobile-game-godot/
 - Created by: GameDev.tv Team, Kaan Alpar.
 - Original Repo: https://gitlab.com/GameDevTV/godot-mobile/jumper-jam
@@ -12,7 +13,7 @@ The game is implemented during the course "Master Mobile Game Development with G
 - Planned duration: 11 Days
 - Development start date: 2024-05-30
 - MVP planned release date: 2024-06-09
-- Name: TODO
+- Name: Jumper Jam
 - Learning goal: Learn how to make mobile games.
 - Release link: TODO
 - YouTube link: TODO
@@ -187,3 +188,10 @@ func add_log_msg(log_str: String):
 - In the main script iterate over all buttons: `get_tree().get_nodes_in_group("buttons")`
 - Connect the signal to the main script method: `button.connect.clicked(_on_button_pressed)`
 - Use `match` to check the button name: `match button.name: "start": _start_game()`
+
+### Create a one script for several scenes
+
+- Create a new script file with the name `base_screen.gd`
+- Drug and drop the script to the scenes where you want to use it.
+- In the script use `extends Controls` to get access to the UI elements as example.
+- Write the common code in the script.
