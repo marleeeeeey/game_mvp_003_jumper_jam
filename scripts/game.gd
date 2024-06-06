@@ -113,6 +113,7 @@ func _on_player_died():
 func reset_game():
 	ground_sprite.visible = false
 	hud.set_score(0)
+	hud.visible = false
 	level_generator.reset_level()
 	if player != null:
 		player.queue_free()
