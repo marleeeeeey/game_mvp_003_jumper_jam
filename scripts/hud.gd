@@ -1,5 +1,7 @@
 extends Control
 
+signal pause_game
+
 @onready var topbar = $TopBar
 @onready var topbar_bg = $TopBarBG
 @onready var score_label = $TopBar/ScoreLabel
@@ -29,7 +31,7 @@ func _ready():
 
 
 func _on_pause_button_pressed():
-	pass
+	pause_game.emit()
 
 
 func set_score(new_score):

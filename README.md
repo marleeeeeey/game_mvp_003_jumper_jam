@@ -60,6 +60,7 @@ Gameplay is similar to the Doodle Jump game. The player jumps on the platforms a
 - Use `await(get_tree().create_timer(0.75).timeout)` to add delay between the actions.
 - Use `signal` to move from lower level to the higher level scene. Use `call` to move from the higher level to the lower level scene.
 - Set `obj=null` and `path.to.obj=null` for references after calling `queue_free()` to prevent crashes.
+- Use `"user://file_name.file_extension"` to save the file in the user directory for specific game.
 
 ## Files structure
 
@@ -274,3 +275,8 @@ func load_score():
 	else:
 		highscore = 0
 ```
+
+### Pause the game
+
+- Add action on pause button: `get_tree().paused = !get_tree().paused`.
+- Set `Node.Process.Mode` to `ALWAYS` for UI elements to update them during the pause.
