@@ -22,6 +22,7 @@ var camera: Camera2D = null
 
 var score: int = 0
 var highscore: int = 0
+var save_file_path = "user://highscore.save"
 
 
 func _ready():
@@ -39,6 +40,8 @@ func _ready():
 	hud.visible = false
 	hud.set_score(0)
 	ground_sprite.visible = false
+
+	load_score()
 
 
 # Sprite2D scale need to setup correct setting for parallax
@@ -100,6 +103,7 @@ func _on_player_died():
 
 	if score > highscore:
 		highscore = score
+		save_score()
 
 	player_died.emit(score, highscore)
 
@@ -115,3 +119,18 @@ func reset_game():
 	if camera:
 		camera.queue_free()
 		camera = null
+
+
+func save_score():
+	var file = FileAccess.open(save_file_path, FileAccess.WRITE)
+	file.store_var(highscore)
+	file.close()
+
+
+func load_score():
+	if FileAccess.file_exists(save_file_path):
+		var file = FileAccess.open(save_file_path, FileAccess.READ)
+		highscore = file.get_var()
+		file.close()
+	else:
+		highscore = 0

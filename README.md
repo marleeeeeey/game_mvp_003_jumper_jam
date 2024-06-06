@@ -255,3 +255,22 @@ The main idea is to emit signal from lower level to the higher level. Then call 
   - does some logic when player dies
   - emits `player_died` signal
 - `Main` scene catch player_died signal and call `screens.game_over(score, highscore)`
+
+### Save scores between the game sessions
+
+- `var save_file_path = "user://highscore.save"` - path to the save file
+
+```js
+func save_score():
+	var file = FileAccess.open(save_file_path, FileAccess.WRITE)
+	file.store_var(highscore)
+	file.close()
+
+func load_score():
+	if FileAccess.file_exists(save_file_path):
+		var file = FileAccess.open(save_file_path, FileAccess.READ)
+		highscore = file.get_var()
+		file.close()
+	else:
+		highscore = 0
+```
