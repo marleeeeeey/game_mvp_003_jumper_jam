@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cf8cq1f8d0f3b" path="res://scenes/pause_screen.tscn" id="4_rbw1o"]
 
 [node name="Screens" type="CanvasLayer"]
+process_mode = 3
 layer = 101
 script = ExtResource("1_7uwko")
 

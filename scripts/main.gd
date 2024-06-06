@@ -27,3 +27,4 @@ func _on_player_died(score, highscore):
 
 func _on_game_pause_game():
 	get_tree().paused = true
+	screens.pause_game()

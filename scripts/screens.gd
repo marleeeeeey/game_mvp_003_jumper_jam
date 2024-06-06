@@ -37,7 +37,6 @@ func _on_button_pressed(button: ScreenButton):
 			start_game.emit()
 		"PauseRetry":
 			print("Pause retry")
-			change_screen(game_over_screen)
 		"PauseBack":
 			print("Pause back")
 		"PauseClose":
@@ -73,3 +72,7 @@ func game_over(score, highscore):
 	game_over_score_label.text = "Score: " + str(score)
 	game_over_highscore_label.text = "Best: " + str(highscore)
 	change_screen(game_over_screen)
+
+
+func pause_game():
+	change_screen(pause_screen)

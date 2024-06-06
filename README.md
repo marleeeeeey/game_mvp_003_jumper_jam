@@ -280,3 +280,4 @@ func load_score():
 
 - Add action on pause button: `get_tree().paused = !get_tree().paused`.
 - Set `Node.Process.Mode` to `ALWAYS` for UI elements to update them during the pause.
+- Set `tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)` to continue the animation during the pause.
