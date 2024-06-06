@@ -65,6 +65,8 @@ func _process(_delta):
 
 
 func new_game():
+	reset_game()
+
 	player = player_scene.instantiate()
 	player.position = player_spawn_pos
 	player.died.connect(_on_player_died)
