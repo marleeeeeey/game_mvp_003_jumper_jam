@@ -281,3 +281,16 @@ func load_score():
 - Add action on pause button: `get_tree().paused = !get_tree().paused`.
 - Set `Node.Process.Mode` to `ALWAYS` for UI elements to update them during the pause.
 - Set `tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)` to continue the animation during the pause.
+- Pause the game when lost focus:
+
+```
+DisplayServer.window_set_window_event_callback(_on_windows_event)
+
+func _on_windows_event(event):
+	match event:
+		DisplayServer.WINDOW_EVENT_FOCUS_OUT:
+			_on_game_pause_game()
+		DisplayServer.WINDOW_EVENT_CLOSE_REQUEST:
+			get_tree().quit()
+
+```
