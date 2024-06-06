@@ -64,6 +64,7 @@ func _process(_delta):
 func new_game():
 	player = player_scene.instantiate()
 	player.position = player_spawn_pos
+	player.died.connect(_on_player_died)
 	add_child(player)
 
 	camera = camera_scene.instantiate()
@@ -75,3 +76,7 @@ func new_game():
 		level_generator.start_generation()
 
 	hud.visible = true
+
+
+func _on_player_died():
+	print("_on_player_died")
