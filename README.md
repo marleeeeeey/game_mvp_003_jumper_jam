@@ -54,6 +54,7 @@ Gameplay is similar to the Doodle Jump game. The player jumps on the platforms a
 - Set `Control.Mouse.Filter` to `IGNORE` to prevent mouse events from the UI for debug layout as example.
 - Use `Tween` class for animations to interpolate values easily and lightweight. Tween is like code behind animation player.
 - Use `get_tree().call_group("buttons", "set_disabled", true)` to call the method for all nodes in the group.
+- Use `DisplayServer.get_display_safe_area()` to get the safe area for the phone screen.
 
 ## Files structure
 

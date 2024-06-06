@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vulxj")
 
-[node name="TopBarBR" type="ColorRect" parent="."]
+[node name="TopBarBG" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
