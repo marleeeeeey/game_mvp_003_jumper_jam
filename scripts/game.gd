@@ -21,6 +21,7 @@ var camera: Camera2D = null
 @onready var viewport_size = get_viewport_rect().size
 
 var score: int = 0
+var highscore: int = 0
 
 
 func _ready():
@@ -36,6 +37,7 @@ func _ready():
 	setup_parallax_layer(parallax3)
 
 	hud.visible = false
+	hud.set_score(0)
 	ground_sprite.visible = false
 
 
@@ -69,7 +71,7 @@ func _process(_delta):
 		var new_score = viewport_size.y - player.global_position.y
 		if score < new_score:
 			score = new_score
-			print(score)
+			hud.set_score(score)
 
 
 func new_game():
@@ -95,11 +97,16 @@ func new_game():
 
 func _on_player_died():
 	hud.visible = false
-	player_died.emit(12341, 35342)
+
+	if score > highscore:
+		highscore = score
+
+	player_died.emit(score, highscore)
 
 
 func reset_game():
 	ground_sprite.visible = false
+	hud.set_score(0)
 	level_generator.reset_level()
 	if player != null:
 		player.queue_free()
