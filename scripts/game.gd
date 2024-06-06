@@ -34,6 +34,7 @@ func _ready():
 	setup_parallax_layer(parallax3)
 
 	hud.visible = false
+	ground_sprite.visible = false
 
 
 # Sprite2D scale need to setup correct setting for parallax
@@ -78,8 +79,21 @@ func new_game():
 		level_generator.start_generation()
 
 	hud.visible = true
+	ground_sprite.visible = true
 
 
 func _on_player_died():
 	hud.visible = false
 	player_died.emit(12341, 35342)
+
+
+func reset_game():
+	ground_sprite.visible = false
+	level_generator.reset_level()
+	if player != null:
+		player.queue_free()
+		player = null
+		level_generator.player = null
+	if camera:
+		camera.queue_free()
+		camera = null

@@ -58,6 +58,8 @@ Gameplay is similar to the Doodle Jump game. The player jumps on the platforms a
 - Use `set_deferred` to set the property in the next frame. Example: `cshape.set_deferred("disabled", true)`.
 - Use `print("msg")` to debug the code during the development.
 - Use `await(get_tree().create_timer(0.75).timeout)` to add delay between the actions.
+- Use `signal` to move from lower level to the higher level scene. Use `call` to move from the higher level to the lower level scene.
+- Set `obj=null` and `path.to.obj=null` for references after calling `queue_free()` to prevent crashes.
 
 ## Files structure
 
