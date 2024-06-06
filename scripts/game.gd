@@ -20,6 +20,8 @@ var camera: Camera2D = null
 
 @onready var viewport_size = get_viewport_rect().size
 
+var score: int = 0
+
 
 func _ready():
 	var player_spawn_pos_y_offset = 135
@@ -63,6 +65,12 @@ func _process(_delta):
 	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
 
+	if player:
+		var new_score = viewport_size.y - player.global_position.y
+		if score < new_score:
+			score = new_score
+			print(score)
+
 
 func new_game():
 	reset_game()
@@ -82,6 +90,7 @@ func new_game():
 
 	hud.visible = true
 	ground_sprite.visible = true
+	score = 0
 
 
 func _on_player_died():
