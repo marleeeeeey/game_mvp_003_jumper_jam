@@ -1,5 +1,7 @@
 extends Node2D
 
+signal player_died(score, highscore)
+
 @onready var level_generator = $LevelGenerator
 @onready var ground_sprite = $GroundSprite
 
@@ -79,4 +81,5 @@ func new_game():
 
 
 func _on_player_died():
-	print("_on_player_died")
+	hud.visible = false
+	player_died.emit(12341, 35342)

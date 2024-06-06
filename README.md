@@ -57,6 +57,7 @@ Gameplay is similar to the Doodle Jump game. The player jumps on the platforms a
 - Use `DisplayServer.get_display_safe_area()` to get the safe area for the phone screen.
 - Use `set_deferred` to set the property in the next frame. Example: `cshape.set_deferred("disabled", true)`.
 - Use `print("msg")` to debug the code during the development.
+- Use `await(get_tree().create_timer(0.75).timeout)` to add delay between the actions.
 
 ## Files structure
 
@@ -233,3 +234,22 @@ func change_screen(new_screen):
     - Screens (contains StartGame button)
 - Add signal to the Screens scene: `signal start_game`
 - Subscribe to the signal in the Main script: `screens.start_game.connect(_on_screens_start_game)`
+
+### Pattern to implement player died event - signal from lower level to the higher level and back to lower again
+
+The main idea is to emit signal from lower level to the higher level. Then call method from the higher level to the lower level but for another scenes. On the way, we can do some logic in any level.
+
+- We have next scene structure:
+  - Main
+    - Game
+      - Player
+    - Screens
+      - GameOverScreen
+        - ScoreLabel
+        - HighScoreLabel
+
+- `Player` emits signal `died`
+- `Game` script subscribes to the signal and:
+  - does some logic when player dies
+  - emits `player_died` signal
+- `Main` scene catch player_died signal and call `screens.game_over(score, highscore)`
