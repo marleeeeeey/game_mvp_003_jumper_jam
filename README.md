@@ -53,6 +53,7 @@ Gameplay is similar to the Doodle Jump game. The player jumps on the platforms a
 - Use empty elements (Controls) as anchors for animations to support different screen sizes.
 - Set `Control.Mouse.Filter` to `IGNORE` to prevent mouse events from the UI for debug layout as example.
 - Use `Tween` class for animations to interpolate values easily and lightweight. Tween is like code behind animation player.
+- Use `get_tree().call_group("buttons", "set_disabled", true)` to call the method for all nodes in the group.
 
 ## Files structure
 

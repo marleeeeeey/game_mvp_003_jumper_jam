@@ -54,3 +54,6 @@ func change_screen(new_screen):
 	current_screen = new_screen
 	if current_screen:
 		var appear_tween = current_screen.appear()
+		await(appear_tween.finished)
+		# Enable all the screen buttons.
+		get_tree().call_group("buttons", "set_disabled", false)
