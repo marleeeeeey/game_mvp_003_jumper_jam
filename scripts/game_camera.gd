@@ -18,6 +18,10 @@ func _physics_process(_delta):
 
 
 func _ready():
+	# Do the same as in _physics_process to prevent glitch.
+	if player:
+		global_position.y = player.global_position.y
+
 	# Centered the camera. It should be done code behind to support any screen resolutions.
 	global_position.x = viewport_size.x / 2
 

@@ -7,6 +7,8 @@ extends Node2D
 @onready var parallax2 = $ParallaxBackground/ParallaxLayer2
 @onready var parallax3 = $ParallaxBackground/ParallaxLayer3
 
+@onready var hud = $UILayer/HUD
+
 var player_scene = preload("res://scenes/player.tscn")
 var player: Player = null
 var player_spawn_pos: Vector2
@@ -29,7 +31,7 @@ func _ready():
 	setup_parallax_layer(parallax2)
 	setup_parallax_layer(parallax3)
 
-	new_game()
+	hud.visible = false
 
 
 # Sprite2D scale need to setup correct setting for parallax
@@ -68,4 +70,8 @@ func new_game():
 	camera.setup_camera(player)
 	add_child(camera)
 
-	level_generator.setup(player)
+	if player:
+		level_generator.setup(player)
+		level_generator.start_generation()
+
+	hud.visible = true

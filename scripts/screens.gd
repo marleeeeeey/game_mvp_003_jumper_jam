@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal start_game
+
 @onready var console = $Debug/ConsoleLog
 
 @onready var title_screen = $TitleScreen
@@ -7,6 +9,7 @@ extends CanvasLayer
 @onready var game_over_screen = $GameOverScreen
 
 var current_screen = null
+
 
 func _ready() -> void:
 	console.visible = false
@@ -25,8 +28,10 @@ func register_buttons():
 func _on_button_pressed(button: ScreenButton):
 	match button.name:
 		"TitlePlay":
-			print("Title play")
-			change_screen(pause_screen)
+			change_screen(null)
+			# Wait when fade-in/out animations is done.
+			await (get_tree().create_timer(0.5).timeout)
+			start_game.emit()
 		"PauseRetry":
 			print("Pause retry")
 			change_screen(game_over_screen)
@@ -49,11 +54,11 @@ func _on_toggle_console_pressed():
 func change_screen(new_screen):
 	if current_screen:
 		var disappear_tween = current_screen.disapear()
-		await(disappear_tween.finished)
+		await (disappear_tween.finished)
 		current_screen.visible = false
 	current_screen = new_screen
 	if current_screen:
 		var appear_tween = current_screen.appear()
-		await(appear_tween.finished)
+		await (appear_tween.finished)
 		# Enable all the screen buttons.
 		get_tree().call_group("buttons", "set_disabled", false)

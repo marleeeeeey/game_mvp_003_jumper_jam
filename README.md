@@ -222,3 +222,12 @@ func change_screen(new_screen):
 ```
 
 - Disable buttons during the transition to prevent double clicks.
+
+### Pattern to implement StartGame click from one csene to another
+
+- We have next sceene structure:
+  - Main
+    - Game
+    - Screens (contains StartGame button)
+- Add signal to the Screens scene: `signal start_game`
+- Subscribe to the signal in the Main script: `screens.start_game.connect(_on_screens_start_game)`

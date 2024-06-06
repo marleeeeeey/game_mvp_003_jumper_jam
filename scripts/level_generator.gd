@@ -20,6 +20,9 @@ func setup(_player: Player):
 func _ready():
 	# Generate the first iteration of level with ground.
 	start_platform_y = viewport_size.y - (y_distance_between_platforms * 2)
+
+
+func start_generation():
 	generate_level(start_platform_y, true)
 
 
