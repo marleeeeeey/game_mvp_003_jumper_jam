@@ -218,3 +218,5 @@ func change_screen(new_screen):
 	if current_screen:
 		var appear_tween = current_screen.appear()
 ```
+
+- Disable buttons during the transition to prevent double clicks.
