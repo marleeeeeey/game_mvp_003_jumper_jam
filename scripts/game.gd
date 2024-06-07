@@ -25,6 +25,8 @@ var score: int = 0
 var highscore: int = 0
 var save_file_path = "user://highscore.save"
 
+var new_skin_unlocked = true
+
 
 func _ready():
 	var player_spawn_pos_y_offset = 135
@@ -86,6 +88,10 @@ func new_game():
 	player.position = player_spawn_pos
 	player.died.connect(_on_player_died)
 	add_child(player)
+
+	# Should be used after player is added to the scene to apply sprite immediately.
+	if new_skin_unlocked:
+		player.use_new_skin()
 
 	camera = camera_scene.instantiate()
 	camera.setup_camera(player)
