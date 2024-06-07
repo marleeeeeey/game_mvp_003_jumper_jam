@@ -3,11 +3,15 @@ extends CanvasLayer
 signal start_game
 signal delete_level
 
+signal purchase_skin
+
 @onready var console = $Debug/ConsoleLog
 
 @onready var title_screen = $TitleScreen
 @onready var pause_screen = $PauseScreen
 @onready var game_over_screen = $GameOverScreen
+@onready var shop_screen = $ShopScreen
+
 @onready var game_over_score_label = $GameOverScreen/Box/ScoreLabel
 @onready var game_over_highscore_label = $GameOverScreen/Box/HighScoreLabel
 
@@ -36,6 +40,8 @@ func _on_button_pressed(button: ScreenButton):
 			# Wait when fade-in/out animations is done.
 			await (get_tree().create_timer(0.5).timeout)
 			start_game.emit()
+		"TitleShop":
+			change_screen(shop_screen)
 		"PauseRetry":
 			change_screen(null)
 			await (get_tree().create_timer(0.75).timeout)
@@ -56,6 +62,10 @@ func _on_button_pressed(button: ScreenButton):
 		"GameOverBack":
 			change_screen(title_screen)
 			delete_level.emit()
+		"ShopBack":
+			change_screen(title_screen)
+		"ShopPurchaseSkin":
+			purchase_skin.emit()
 
 
 func _on_toggle_console_pressed():

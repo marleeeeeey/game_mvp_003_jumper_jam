@@ -25,7 +25,7 @@ var score: int = 0
 var highscore: int = 0
 var save_file_path = "user://highscore.save"
 
-var new_skin_unlocked = true
+var new_skin_unlocked = false
 
 
 func _ready():
