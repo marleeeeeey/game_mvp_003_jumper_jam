@@ -331,9 +331,22 @@ func play(sound_name):
 
 ### IAP (In-App Purchase) Android build preparations
 
+#### Install Android Build Template and Gradle
+
+https://docs.godotengine.org/en/stable/tutorials/export/android_gradle_build.html
+
 - Project -> Install Android Build Template
 - Export -> Android:
   - Use Gradle Build = true
   - Export Format = AAB
   - Export Path = *.aab
 - Start remote debug on the android device - it should trigger the build process via Gradle.
+
+#### Add IAP plugin to the project
+
+https://docs.godotengine.org/en/stable/tutorials/platform/android/android_in_app_purchases.html
+
+- Dowbload the IAP plugin: https://github.com/godotengine/godot-google-play-billing/releases/tag/1.2.0
+- Copy the plugin to the project folder: `res://android/plugins/`
+- Project -> Export -> Android -> Plugins -> "Godot Google Play Billing" = true
+- `Engine.get_singleton("GodotGooglePlayBilling")` to access the plugin from the script.
