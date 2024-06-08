@@ -328,3 +328,12 @@ func play(sound_name):
 	print("Too many sounds playing at once, not anough sound players")
 
 ```
+
+### IAP (In-App Purchase) Android build preparations
+
+- Project -> Install Android Build Template
+- Export -> Android:
+  - Use Gradle Build = true
+  - Export Format = AAB
+  - Export Path = *.aab
+- Start remote debug on the android device - it should trigger the build process via Gradle.
