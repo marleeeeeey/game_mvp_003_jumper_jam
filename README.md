@@ -2,31 +2,23 @@
 
 Jumper Jam - the game is implemented during the course "Master Mobile Game Development with Godot 4".
 Gameplay is similar to the Doodle Jump game. The player jumps on the platforms and tries to reach the highest score.
+
 - Course: https://www.udemy.com/course/mobile-game-godot/
-- Created by: GameDev.tv Team, Kaan Alpar.
+- Created by: Kaan Alpar (GameDev.tv)
 - Original Repo: https://gitlab.com/GameDevTV/godot-mobile/jumper-jam
 - Site: https://www.gamedev.tv
 - Discord: https://discord.gg/eUSFZdJ
 
-## My info
+## Personal Information
 
 - Planned duration: 11 Days
 - Development start date: 2024-05-30
 - MVP planned release date: 2024-06-09
-- Name: Jumper Jam
 - Learning goal: Learn how to make mobile games.
-- Release link: TODO
-- YouTube link: TODO
+- Release link: https://marleeeeeey.itch.io/jumper-jam
+- YouTube link: #TODO
 
-## Gameplay overview
-
-- TODO
-
-## Controls
-
-- TODO
-
-## Godot Guidelines
+## Godot Guidelines from Course
 
 - Use `_physics_process` for physics related code.
 - Use `move_toward(velocity.x, 0, speed/10)` for smooth speed change.
@@ -61,32 +53,36 @@ Gameplay is similar to the Doodle Jump game. The player jumps on the platforms a
 - Use `signal` to move from lower level to the higher level scene. Use `call` to move from the higher level to the lower level scene.
 - Set `obj=null` and `path.to.obj=null` for references after calling `queue_free()` to prevent crashes.
 - Use `"user://file_name.file_extension"` to save the file in the user directory for specific game.
+- Use `var run_in_browser = OS.has_feature("web")` to check if the game runs in the browser.
 
-## Files structure
-
-- TODO
-
-## Devlog
+## Development Log
 
 - Create project with Player jumping on platforms with camera following and camera limits : #2024-05-31
-- Complete half of gameplay development. 18% of the course completed : #2024-06-31
+- Parallax background adaptation for the different screen sizes : #2024-06-01
+- Use accelerometer to move the player on the mobile device. First export to mobile : #2024-06-03
+- Create Debug Console screen to show the logs from the game : #2024-06-04
+- Create dummy Title/Pause/GameOver screens with fade in/out animations : #2024-06-05
+- Create dummy HUD top bar with score and highscore : #2024-06-06
+- Implement transition between the screens. Complete HUD calculations : #2024-06-07
+- SoundFX script to play sounds from any scene : #2024-06-07
+- Implement shop screen : #2024-06-08
+- Start implementing IAP (In-App Purchase) for the game : #2024-06-08
+- Public the game MVP on itch.io : #2024-06-09
 
-## TODO
+## TODO list
 
-- TODO
+- Record the video with the game MVP and publish it on YouTube. #TODO
+- Redraw all assets to make the game more unique. #TODO
+- Register in Google Play Console to publish the game (Lesson 74). #TODO
+- Publish the game in Google Play Store. #TODO
+- Publish the game in Apple App Store. #TODO
 
 ## Assets
 
 - https://www.udemy.com/course/mobile-game-godot/
-- https://www.craftpix.net - need ask license if going to use in commercial project
+- https://www.craftpix.net
 
-## Tools
-
-- TODO
-
-## Course knowledge
-
-- Course: https://www.udemy.com/course/mobile-game-godot/
+## Course Recipes
 
 ### Scene organization
 

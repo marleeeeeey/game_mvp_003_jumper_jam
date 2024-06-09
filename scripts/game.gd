@@ -27,8 +27,12 @@ var save_file_path = "user://highscore.save"
 
 var new_skin_unlocked = false
 
+@onready var run_in_browser = OS.has_feature("web")
+
 
 func _ready():
+	MyUtility.add_log_msg("Run in browser: " + str(run_in_browser))
+
 	var player_spawn_pos_y_offset = 135
 	player_spawn_pos.x = viewport_size.x / 2.0
 	player_spawn_pos.y = viewport_size.y - player_spawn_pos_y_offset
@@ -69,7 +73,7 @@ func setup_parallax_layer(parallax_layer: ParallaxLayer):
 
 
 func _process(_delta):
-	if Input.is_action_just_pressed("quit"):
+	if Input.is_action_just_pressed("quit") and not run_in_browser:
 		get_tree().quit()
 	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()

@@ -9,6 +9,7 @@ signal pause_game
 
 func _ready():
 	var os_name = OS.get_name()
+	MyUtility.add_log_msg("Operating system: " + str(os_name))
 	var is_phone = os_name == "Android" or os_name == "iOS"
 	if is_phone:
 		var safe_area = DisplayServer.get_display_safe_area()
