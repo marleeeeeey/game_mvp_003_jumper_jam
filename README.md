@@ -347,3 +347,33 @@ https://docs.godotengine.org/en/stable/tutorials/platform/android/android_in_app
 - Copy the plugin to the project folder: `res://android/plugins/`
 - Project -> Export -> Android -> Plugins -> "Godot Google Play Billing" = true
 - `Engine.get_singleton("GodotGooglePlayBilling")` to access the plugin from the script.
+
+## Games reviews
+
+### DefinitlyNotABot from itch.io
+
+While the game initialy is fun to play, it quickly becomes boring due to there being no raise in difficulty. To combat this, maybe decrease the frequency of platforms spawning or randomize the heights more. Moving platforms or dangers could also increase the fun.
+
+As for the art, it is quite nice. The only thing is the fact that the player teleports to the other side of the screen if you exit on one side. If the player already shows on both sides of the screen when you are cut off will probably look better.
+
+All in all good game with great potential! Keep up the good work
+
+**Action**
+
+- Decrease the frequency of platforms spawning. #TODO
+- Randomize the heights more. #TODO
+- Add moving platforms or dangers. #TODO
+- Show the player on both sides of the screen when you are cut off. #TODO
+
+**Reply**
+
+Hi, DefinitlyNotABot.
+
+Thank you for your review. It gives me motivation to further develop this project.
+
+I agree with all the points you made. I am going to implement solutions for these problems soon. I will let you know once they are in place. In the meantime, you may also check out the top-down platformer prototype I recently wrote and leave your comments there: https://marleeeeeey.itch.io/cave-roguelike.
+
+Thank you once again.
+
+Best regards,
+marleeeeeey
