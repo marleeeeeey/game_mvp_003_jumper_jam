@@ -3,7 +3,8 @@
 Jumper Jam - the game is implemented during the course "Master Mobile Game Development with Godot 4".
 Gameplay is similar to the Doodle Jump game. The player jumps on the platforms and tries to reach the highest score.
 
-- Course: https://www.udemy.com/course/mobile-game-godot/
+- Course: Master Mobile Game Development with Godot 4
+- Course link: https://www.udemy.com/course/mobile-game-godot/
 - Created by: Kaan Alpar (GameDev.tv)
 - Original Repo: https://gitlab.com/GameDevTV/godot-mobile/jumper-jam
 - Site: https://www.gamedev.tv
